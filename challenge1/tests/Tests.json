@@ -1,0 +1,328 @@
+{
+  "info": {
+    "name": "Tests.paw",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get course by id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/course/101",
+          "query": null,
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "course",
+            "101"
+          ]
+        },
+        "description": "",
+        "header": [],
+        "body": null,
+        "auth": null
+      },
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "followOriginalHttpMethod": false,
+        "followAuthorizationHeader": false
+      },
+      "response": []
+    },
+    {
+      "name": "Get default page of courses",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/course",
+          "query": null,
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "course"
+          ]
+        },
+        "description": "",
+        "header": [],
+        "body": null,
+        "auth": null
+      },
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "followOriginalHttpMethod": false,
+        "followAuthorizationHeader": false
+      },
+      "response": []
+    },
+    {
+      "name": "Get nth page of courses",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/course?page-number=20&page-size=10",
+          "query": [
+            {
+              "key": "page-number",
+              "value": "20",
+              "disabled": false,
+              "description": null
+            },
+            {
+              "key": "page-size",
+              "value": "10",
+              "disabled": false,
+              "description": null
+            }
+          ],
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "course"
+          ]
+        },
+        "description": "",
+        "header": [],
+        "body": null,
+        "auth": null
+      },
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "followOriginalHttpMethod": false,
+        "followAuthorizationHeader": false
+      },
+      "response": []
+    },
+    {
+      "name": "Get page of courses by title words",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/course?title-words=django,%20python",
+          "query": [
+            {
+              "key": "title-words",
+              "value": "django, python",
+              "disabled": false,
+              "description": null
+            }
+          ],
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "course"
+          ]
+        },
+        "description": "",
+        "header": [],
+        "body": null,
+        "auth": null
+      },
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "followOriginalHttpMethod": false,
+        "followAuthorizationHeader": false
+      },
+      "response": []
+    },
+    {
+      "name": "Delete course by id",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:5000/course/201",
+          "query": null,
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "course",
+            "201"
+          ]
+        },
+        "description": "",
+        "header": [],
+        "body": null,
+        "auth": null
+      },
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "followOriginalHttpMethod": false,
+        "followAuthorizationHeader": false
+      },
+      "response": []
+    },
+    {
+      "name": "Add course",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:5000/course",
+          "query": null,
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "course"
+          ]
+        },
+        "description": "",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "description": null
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "disabled": false,
+          "raw": "{\n    \"title\" : \"Brand new course\",\n    \"image_path\" : \"images/some/path/foo.jpg\",\n    \"price\" : 25.0,\n    \"on_discount\" : false,\n    \"discount_price\" : 5.0,\n    \"description\" : \"This is a brand new course\"\n}\n\n"
+        },
+        "auth": null
+      },
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "followOriginalHttpMethod": false,
+        "followAuthorizationHeader": false
+      },
+      "response": []
+    },
+    {
+      "name": "Add course with errors",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:5000/course",
+          "query": null,
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "course"
+          ]
+        },
+        "description": "",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "description": null
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "disabled": false,
+          "raw": "{\n    \"title\" : \"X\",\n    \"image_path\" : \"images/some/path/foo.jpg\",\n    \"price\" : 12.0,\n    \"on_discount\" : false,\n    \"discount_price\" : 5.0,\n    \"description\" : \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n}\n\n"
+        },
+        "auth": null
+      },
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "followOriginalHttpMethod": false,
+        "followAuthorizationHeader": false
+      },
+      "response": []
+    },
+    {
+      "name": "Update course",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:5000/course/201",
+          "query": null,
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "course",
+            "201"
+          ]
+        },
+        "description": "",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "description": null
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "disabled": false,
+          "raw": "{\n  \"title\": \"Blah blah blah\",\n  \"image_path\": \"images/some/path/foo.jpg\",\n  \"price\": 25.0,\n  \"on_discount\": false,\n  \"discount_price\": 5.0,\n  \"description\": \"New description\",\n  \"id\": 201\n}"
+        },
+        "auth": null
+      },
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "followOriginalHttpMethod": false,
+        "followAuthorizationHeader": false
+      },
+      "response": []
+    },
+    {
+      "name": "Update course with errors",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:5000/course/201",
+          "query": null,
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "course",
+            "201"
+          ]
+        },
+        "description": "",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "description": null
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "disabled": false,
+          "raw": "{\n  \"title\": \"X\",\n  \"image_path\": \"images/some/path/foo.jpg\",\n  \"price\": 25.0,\n  \"on_discount\": \"X\",\n  \"discount_price\": 5.0,\n  \"description\": \"New description\",\n  \"id\": \"OOO\"\n}"
+        },
+        "auth": null
+      },
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "followOriginalHttpMethod": false,
+        "followAuthorizationHeader": false
+      },
+      "response": []
+    }
+  ]
+}
